@@ -9,16 +9,13 @@ interface Participant {
 }
 
 const participants: Participant[] = [
-  { id: 1, fullName: 'Соколов Андрей Викторович', position: 'Генеральный директор', city: 'Москва' },
-  { id: 2, fullName: 'Морозова Елена Сергеевна', position: 'Финансовый директор', city: 'Санкт-Петербург' },
-  { id: 3, fullName: 'Кузнецов Дмитрий Александрович', position: 'Руководитель департамента', city: 'Екатеринбург' },
-  { id: 4, fullName: 'Петрова Ольга Николаевна', position: 'Главный аналитик', city: 'Новосибирск' },
-  { id: 5, fullName: 'Волков Игорь Михайлович', position: 'Технический директор', city: 'Казань' },
-  { id: 6, fullName: 'Смирнова Анна Павловна', position: 'Директор по развитию', city: 'Нижний Новгород' },
-  { id: 7, fullName: 'Лебедев Сергей Юрьевич', position: 'Коммерческий директор', city: 'Краснодар' },
-  { id: 8, fullName: 'Новикова Татьяна Игоревна', position: 'Руководитель проектов', city: 'Самара' },
-  { id: 9, fullName: 'Орлов Михаил Дмитриевич', position: 'Директор по маркетингу', city: 'Ростов-на-Дону' },
-  { id: 10, fullName: 'Васильева Ирина Олеговна', position: 'HR-директор', city: 'Уфа' },
+  {
+    id: 1,
+    fullName: 'Веретенникова Светлана Александровна',
+    position:
+      'Индивидуальный предприниматель. Общественный помощник Уполномоченного по защите прав предпринимателей. Член партии «Единая Россия». Пензенское региональное отделение Общероссийской общественной организации малого и среднего предпринимательства «ОПОРА РОССИИ»',
+    city: 'Пенза',
+  },
 ];
 
 const RussianFlag = () => (
@@ -102,16 +99,16 @@ const Index = () => {
                     key={p.id}
                     className="border-b border-border/60 last:border-0 hover:bg-secondary/40 transition-colors"
                   >
-                    <td className="font-sans text-sm text-muted-foreground px-6 py-4">
+                    <td className="font-sans text-sm text-muted-foreground px-6 py-4 align-top">
                       {String(i + 1).padStart(2, '0')}
                     </td>
-                    <td className="font-sans text-sm font-medium px-6 py-4 whitespace-nowrap">
+                    <td className="font-sans text-sm font-medium px-6 py-4 whitespace-nowrap align-top">
                       {p.fullName}
                     </td>
-                    <td className="font-sans text-sm text-foreground/80 px-6 py-4">
+                    <td className="font-sans text-sm text-foreground/80 px-6 py-4 align-top max-w-md leading-relaxed">
                       {p.position}
                     </td>
-                    <td className="px-6 py-4">
+                    <td className="px-6 py-4 align-top">
                       <span className="inline-flex items-center gap-2.5 font-sans text-sm whitespace-nowrap">
                         <RussianFlag />
                         {p.city}

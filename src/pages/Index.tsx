@@ -19,14 +19,30 @@ const participant = {
 };
 
 const Index = () => {
+  const handlePrint = () => window.print();
+
   return (
     <div
-      className="min-h-screen w-full flex items-center justify-center p-6"
+      className="print-wrapper min-h-screen w-full flex flex-col items-center justify-center p-6 gap-8"
       style={{ background: 'radial-gradient(ellipse at 50% 65%, #1c2138 0%, #0b0d16 100%)' }}
     >
-      <div className="w-full max-w-2xl" style={{ perspective: '1000px' }}>
+      {/* кнопка печати */}
+      <button
+        onClick={handlePrint}
+        className="no-print flex items-center gap-2 px-5 py-2.5 rounded-sm font-sans text-sm font-medium transition-all hover:opacity-80 active:scale-95"
+        style={{
+          background: 'hsl(var(--primary))',
+          color: 'hsl(var(--primary-foreground))',
+          letterSpacing: '0.05em',
+        }}
+      >
+        🖨 Распечатать карточку
+      </button>
+
+      <div className="print-card w-full max-w-2xl" style={{ perspective: '1000px' }}>
         {/* карточка */}
         <div
+          className="print-card-inner"
           style={{
             transformStyle: 'preserve-3d',
             transform: 'rotateX(18deg)',
@@ -147,7 +163,7 @@ const Index = () => {
 
         {/* тень на столе */}
         <div
-          className="w-full mx-auto mt-0.5"
+          className="no-print w-full mx-auto mt-0.5"
           style={{
             height: '30px',
             background: 'radial-gradient(ellipse at 50% 0%, rgba(0,0,0,0.5) 0%, transparent 70%)',
